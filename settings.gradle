@@ -32,7 +32,12 @@ include "spring-websocket"
 include "framework-bom"
 include "integration-tests"
 
+//添加自建项目
+include 'demo-ioc'
+
 rootProject.name = "spring"
 rootProject.children.each {project ->
 	project.buildFileName = "${project.name}.gradle"
 }
+
+

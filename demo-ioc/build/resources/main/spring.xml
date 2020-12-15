@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd"
+       default-autowire="byType" >
+       <!--默认不自动装配 类之间的依赖关系不再显示的指定，由spring 自动装配 -->
+
+    <!-- 1:使用xml 进行配置-->
+    <bean id = "daoImpl" class="com.ggw.demo.dao.Impl.IndexDaoImpl" p:val="propertySetTest">
+        <!--p: 可以替换-->
+        <!--<property name="val" value="propertySetTest"></property>-->
+    </bean>
+    <bean id = "serviceImpl" class="com.ggw.demo.service.Impl.IndexServiceImpl" c:_0-ref="daoImpl">
+        <!--<constructor-arg index="0" ref="daoImpl"></constructor-arg>-->
+    </bean>
+
+    <!--1.1 这里体现自动装配功能 可以单独给这个类指定定义的自动装配方式-->
+    <bean id = "autoServiceImpl" class="com.ggw.demo.service.Impl.AutoAssemblingServiceImpl" autowire="byType">
+    </bean>
+
+    <!-- 2:annotation 形式-->
+    <context:component-scan base-package="com.ggw"></context:component-scan>
+
+</beans>
