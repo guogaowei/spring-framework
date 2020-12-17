@@ -24,7 +24,10 @@ public class Test {
         // 3: Java config形式加载文件
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
-        AutoAssemblingServiceImpl autoAssemblingServiceImpl = (AutoAssemblingServiceImpl) context.getBean("autoServiceImpl");
-        autoAssemblingServiceImpl.service();
+        /*AutoAssemblingServiceImpl autoAssemblingServiceImpl = (AutoAssemblingServiceImpl) context.getBean("autoServiceImpl");
+        autoAssemblingServiceImpl.service();*/
+
+		AnnotationServiceImpl annotationService = (AnnotationServiceImpl) context.getBean("annotationServiceImpl");
+		annotationService.service();
     }
 }

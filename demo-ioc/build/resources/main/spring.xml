@@ -11,8 +11,9 @@
         https://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/aop
         https://www.springframework.org/schema/aop/spring-aop.xsd"
-       default-autowire="byType" >
-       <!--默认不自动装配 类之间的依赖关系不再显示的指定，由spring 自动装配 -->
+       >
+	<!--default-autowire="byType"-->
+	<!--默认不自动装配 类之间的依赖关系不再显示的指定，由spring 自动装配 -->
 
     <!-- 1:使用xml 进行配置-->
     <bean id = "daoImpl" class="com.ggw.demo.dao.Impl.IndexDaoImpl" p:val="propertySetTest">
@@ -24,7 +25,7 @@
     </bean>
 
     <!--1.1 这里体现自动装配功能 可以单独给这个类指定定义的自动装配方式-->
-    <bean id = "autoServiceImpl" class="com.ggw.demo.service.Impl.AutoAssemblingServiceImpl" autowire="byType">
+    <bean id = "autoServiceImpl" class="com.ggw.demo.service.Impl.AutoAssemblingServiceImpl">
     </bean>
 
     <!-- 2:annotation 形式-->

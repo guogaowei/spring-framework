@@ -9,11 +9,22 @@ version '5.2.13.BUILD-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     mavenCentral()
 }
 
 dependencies {
+    /*Spring Ioc 环境*/
     compile(project(":spring-context"))
+    compile(project(":spring-context-indexer"))
+    /*Spring 数据源*/
+    compile(project(":spring-jdbc"))
+    //https://mvnrepository.com/artifact/org.mybatis/mybatis
+    compile group: 'org.mybatis', name: 'mybatis', version: '3.5.6'
+    /*mybatis 基于spring管理提供的一个包*/
+    compile group: 'org.mybatis', name: 'mybatis-spring', version: '2.0.6'
+    /*mysql Java链接驱动*/
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.22'
     testCompile group: 'junit', name: 'junit', version: '4.11'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

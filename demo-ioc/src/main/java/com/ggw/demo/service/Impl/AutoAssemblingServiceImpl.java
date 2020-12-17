@@ -1,9 +1,12 @@
 package com.ggw.demo.service.Impl;
 
 import com.ggw.demo.dao.IndexDao;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class AutoAssemblingServiceImpl {
 
+	//使用注解进行自动注入
+	@Autowired
     private IndexDao indexDao;
 
     public void service(){
