@@ -7,7 +7,7 @@ import com.ggw.demo.service.Impl.IndexServiceImpl;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class Test {
+public class IocTest {
     public static void main(String[] args) {
 
         // 1：测试线程内启动此线程

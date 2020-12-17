@@ -34,7 +34,10 @@ include "framework-bom"
 include "integration-tests"
 
 //添加自建项目
+//IOC
 include 'demo-ioc'
+//AOP
+include 'demo-aop'
 
 rootProject.name = "spring"
 rootProject.children.each {project ->
